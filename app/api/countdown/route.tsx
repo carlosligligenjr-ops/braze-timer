@@ -3,9 +3,9 @@ import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 
 export async function GET() {
-  // Target: March 7, 2026, 12:00 PM Singapore (SGT is UTC+8)
+  // Target: March 15, 2026, 12:00 PM Singapore (SGT is UTC+8)
   // 12:00 PM SGT = 04:00 AM UTC
-  const targetDate = new Date('2026-03-07T04:00:00Z');
+  const targetDate = new Date('2026-03-15T04:00:00Z');
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
 
