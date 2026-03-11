@@ -35,7 +35,7 @@ export async function GET() {
         width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center',
         color: 'white', fontFamily: 'sans-serif'
       }}>
-        <div style={{ fontSize: 24, marginBottom: 10, letterSpacing: '2px' }}>UNPACKING IN</div>
+        <div style={{ fontSize: 24, marginBottom: 10, letterSpacing: '2px' }}></div>
         <div style={{ display: 'flex', fontSize: 64, fontWeight: 'bold' }}>
           {days}d : {hours}h : {minutes}m : {seconds}s
         </div>
