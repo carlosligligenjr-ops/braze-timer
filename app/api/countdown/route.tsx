@@ -16,7 +16,7 @@ export async function GET() {
           display: 'flex', background: 'black', width: '100%', height: '100%',
           alignItems: 'center', justifyContent: 'center', color: 'white', fontSize: 60, fontWeight: 'bold'
         }}>
-          UNPACKED!
+          TEST!
         </div>
       ),
       { width: 600, height: 200 }
