@@ -8,23 +8,26 @@ export async function GET() {
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
 
-  const bgUrl = 'https://braze-images.com/appboy/communication/assets/image_assets/images/6aae3539569b21008fd3cee3/original.png?1789801785';
+  const bgUrl =
+    'https://braze-images.com/appboy/communication/assets/image_assets/images/6aae3539569b21008fd3cee3/original.png?1789801785';
 
   if (diff <= 0) {
     return new ImageResponse(
       (
-        <div style={{
-          display: 'flex',
-          backgroundImage: url(${bgUrl}),
-          backgroundSize: '100% 100%',
-          width: '100%',
-          height: '100%',
-          alignItems: 'center',
-          justify: 'center',
-          color: 'white',
-          fontSize: 32,
-          fontWeight: 'bold',
-        }}>
+        <div
+          style={{
+            display: 'flex',
+            backgroundImage: `url(${bgUrl})`,
+            backgroundSize: '100% 100%',
+            width: '100%',
+            height: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            fontSize: 32,
+            fontWeight: 'bold',
+          }}
+        >
           DEAL IS LIVE!
         </div>
       ),
@@ -39,7 +42,7 @@ export async function GET() {
 
   // Zero-padding digits (e.g., 05:09:02)
   const pad = (n: number) => String(n).padStart(2, '0');
-  const timeString = ${pad(totalHours)}:${pad(minutes)}:${pad(seconds)};
+  const timeString = `${pad(totalHours)}:${pad(minutes)}:${pad(seconds)}`;
 
   return new ImageResponse(
     (
@@ -47,7 +50,7 @@ export async function GET() {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          backgroundImage: url(${bgUrl}),
+          backgroundImage: `url(${bgUrl})`,
           backgroundSize: '100% 100%',
           width: '100%',
           height: '100%',
@@ -84,7 +87,7 @@ export async function GET() {
             backgroundColor: '#FFFFFF',
             borderRadius: 14,
             padding: '8px 36px',
-            boxShadow: '0 0 20px rgba(100, 150, 255, 0.6)', // Soft blue glow around the pill
+            boxShadow: '0 0 20px rgba(100, 150, 255, 0.6)',
           }}
         >
           {/* Countdown Numbers */}
