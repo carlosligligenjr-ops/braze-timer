@@ -4,7 +4,7 @@ export const runtime = 'edge';
 
 export async function GET() {
   // Target: September 22, 2026, 12:00 PM Singapore (SGT is UTC+8) -> 04:00 AM UTC
-  const targetDate = new Date('2026-10-05T04:00:00Z');
+  const targetDate = new Date('2026-09-23T04:00:00Z');
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
 
