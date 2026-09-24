@@ -4,12 +4,12 @@ export const runtime = 'edge';
 
 export async function GET() {
   // Target: September 22, 2026, 12:00 PM Singapore (SGT is UTC+8) -> 04:00 AM UTC
-  const targetDate = new Date('2026-09-22T04:00:00Z');
+  const targetDate = new Date('2026-10-05T04:00:00Z');
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
 
   const bgUrl =
-    'https://braze-images.com/appboy/communication/assets/image_assets/images/6aae3539569b21008fd3cee3/original.png?1789801785';
+    'https://braze-images.com/appboy/communication/assets/image_assets/images/6ab4d22ad56067008a83a409/original.jpg?1790235178';
 
   if (diff <= 0) {
     return new ImageResponse(
@@ -60,23 +60,7 @@ export async function GET() {
           padding: '20px',
         }}
       >
-        {/* Header Text */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            color: '#FFFFFF',
-            fontSize: 20,
-            fontWeight: 600,
-            textAlign: 'center',
-            marginBottom: 16,
-            lineHeight: 1.25,
-          }}
-        >
-          <span>Watch out for more Postpaid-exclusive</span>
-          <span>deals on the GlobeOne app!</span>
-        </div>
+
 
         {/* White Rounded Badge Box */}
         <div
