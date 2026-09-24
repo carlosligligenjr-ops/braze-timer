@@ -4,7 +4,7 @@ export const runtime = 'edge';
 
 export async function GET() {
   // Target: September 22, 2026, 12:00 PM Singapore (SGT is UTC+8) -> 04:00 AM UTC
-  const targetDate = new Date('2026-09-29T04:00:00Z');
+  const targetDate = new Date('2026-09-23T04:00:00Z');
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
 
@@ -44,8 +44,9 @@ export async function GET() {
   // Zero-padding helper
   const pad = (n: number) => String(n).padStart(2, '0');
 
-  // Format: 1d : 10 : 00 : 00
-  const timeString = `${days}d : ${pad(hours)} : ${pad(minutes)} : ${pad(seconds)}`;
+  // Format with tighter separator spacing (1d : 10 : 00 : 00 -> 1d:10:00:00 or with minimal space)
+  const timeFormatted = `${pad(hours)} : ${pad(minutes)} : ${pad(seconds)}`;
+  const timeString = days > 0 ? `${days}d : ${timeFormatted}` : timeFormatted;
 
   return new ImageResponse(
     (
@@ -71,7 +72,7 @@ export async function GET() {
             justifyContent: 'center',
             backgroundColor: '#FFFFFF',
             borderRadius: 14,
-            padding: '8px 36px',
+            padding: '8px 24px',
             boxShadow: '0 0 20px rgba(100, 150, 255, 0.6)',
           }}
         >
@@ -81,7 +82,7 @@ export async function GET() {
               color: '#000000',
               fontSize: 38,
               fontWeight: 800,
-              letterSpacing: '1px',
+              letterSpacing: '-0.5px', // Reduced letter spacing between characters
             }}
           >
             {timeString}
