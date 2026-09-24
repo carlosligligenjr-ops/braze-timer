@@ -31,7 +31,7 @@ export async function GET() {
           DEAL IS LIVE!
         </div>
       ),
-      { width: 600, height: 200 }
+      { width: 600, height: 100 }
     );
   }
 
@@ -88,6 +88,6 @@ export async function GET() {
         </div>
       </div>
     ),
-    { width: 600, height: 200 }
+    { width: 600, height: 100 }
   );
 }
