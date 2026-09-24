@@ -4,7 +4,7 @@ export const runtime = 'edge';
 
 export async function GET() {
   // Target: September 22, 2026, 12:00 PM Singapore (SGT is UTC+8) -> 04:00 AM UTC
-  const targetDate = new Date('2026-09-23T04:00:00Z');
+  const targetDate = new Date('2026-09-29T04:00:00Z');
   const now = new Date();
   const diff = targetDate.getTime() - now.getTime();
 
@@ -35,14 +35,17 @@ export async function GET() {
     );
   }
 
-  // Formatting hours to account for days (e.g., 2 days 3 hours = 51 hours)
-  const totalHours = Math.floor(diff / (1000 * 60 * 60));
+  // Calculate days, hours, minutes, and seconds
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
 
-  // Zero-padding digits (e.g., 05:09:02)
+  // Zero-padding helper
   const pad = (n: number) => String(n).padStart(2, '0');
-  const timeString = `${pad(totalHours)}:${pad(minutes)}:${pad(seconds)}`;
+
+  // Format: 1d : 10 : 00 : 00
+  const timeString = `${days}d : ${pad(hours)} : ${pad(minutes)} : ${pad(seconds)}`;
 
   return new ImageResponse(
     (
@@ -60,8 +63,6 @@ export async function GET() {
           padding: '20px',
         }}
       >
-
-
         {/* White Rounded Badge Box */}
         <div
           style={{
